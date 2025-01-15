@@ -1,0 +1,14 @@
+{
+  "name": "Coq Development Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ocamllabs.ocaml-platform",
+    "coq.coq"
+  ],
+  "postCreateCommand": "opam init -y --disable-sandboxing && eval $(opam env) && opam repo add coq-released https://coq.inria.fr/opam/released && opam update && opam install -y coq coqide"
+}
