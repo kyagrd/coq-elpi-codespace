@@ -10,5 +10,5 @@
     "ocamllabs.ocaml-platform",
     "coq.coq"
   ],
-  "postCreateCommand": "opam init -y --disable-sandboxing && eval $(opam env) && opam repo add coq-released https://coq.inria.fr/opam/released && opam update && opam install -y coq coqide"
+  "postCreateCommand": "opam init -y --disable-sandboxing && eval $(opam env) && opam repo add coq-released https://coq.inria.fr/opam/released && opam update && opam install -y coq coc-elpi"
 }
