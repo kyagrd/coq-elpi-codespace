@@ -2,7 +2,7 @@
 FROM ocaml/opam:alpine
 
 # Install necessary dependencies
-RUN sudo apk update && sudo apk add bash m4 curl git
+RUN sudo apk update && sudo apk add bash m4 curl git gmp-dev linux-headers
 
 # Initialize opam
 RUN opam init -y --disable-sandboxing && \
