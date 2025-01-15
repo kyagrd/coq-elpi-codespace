@@ -13,5 +13,5 @@ RUN opam init -y --disable-sandboxing && \
 RUN opam repo add coq-released https://coq.inria.fr/opam/released && \
     opam update
 
-# Install Coq and CoqIDE
-RUN opam install -y coq coqide
+# Install Coq and Coq-Elpi
+RUN opam install -y coq coq-elpi
