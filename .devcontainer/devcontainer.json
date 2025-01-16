@@ -10,5 +10,5 @@
     "ocamllabs.ocaml-platform",
     "coq.coq"
   ],
-  "postCreateCommand": "sudo apk add gmp-dev linux-headers && opam install -y coq-elpi"
+  "postCreateCommand": "opam install -y coq-elpi"
 }
