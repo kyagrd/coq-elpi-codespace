@@ -9,6 +9,5 @@
   "extensions": [
     "ocamllabs.ocaml-platform",
     "coq.coq"
-  ],
-  "postCreateCommand": "opam install -y coq-elpi"
+  ]
 }
