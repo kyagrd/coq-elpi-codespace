@@ -8,7 +8,10 @@
   },
   "extensions": [
     "ocamllabs.ocaml-platform",
-    "coq.coq"
+    "coq.coq",
+    "maximedenes.vscoq",
+    "gares.elpi-lang",
+    "gares.coq-elpi-lang"
   ],
   "postCreateCommand": "opam install vscoq-language-server"
 }
