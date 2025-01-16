@@ -13,5 +13,5 @@
     "gares.elpi-lang",
     "gares.coq-elpi-lang"
   ],
-  "postCreateCommand": "opam install vscoq-language-server"
+  "postCreateCommand": "opam install -y vscoq-language-server"
 }
