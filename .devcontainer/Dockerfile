@@ -1,17 +1,8 @@
-# Use the official OCaml image as a base image
-FROM ocaml/opam:alpine
+# Use the official mathcomp image as a base image
+FROM mathcomp/mathcomp-dev:coq-dev
 
 # Install necessary dependencies
 RUN sudo apk update && sudo apk add bash m4 curl git gmp-dev linux-headers
 
-# Initialize opam
-RUN opam init -y --disable-sandboxing && \
-    eval $(opam env) && \
-    opam update
-
-# Add the Coq opam repository
-RUN opam repo add coq-released https://coq.inria.fr/opam/released && \
-    opam update
-
-# Install Coq and Coq-Elpi
-RUN opam install -y coq coq-elpi
+# Install Coq-Elpi
+RUN opam install -y coq-elpi
