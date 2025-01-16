@@ -9,5 +9,6 @@
   "extensions": [
     "ocamllabs.ocaml-platform",
     "coq.coq"
-  ]
+  ],
+  "postCreateCommand": "opam install vscoq-language-server"
 }
