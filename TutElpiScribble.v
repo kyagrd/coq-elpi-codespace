@@ -5,7 +5,7 @@ From elpi Require Import elpi.
   https://lpcic.github.io/coq-elpi/tutorial_elpi_lang.html
 
   Syntax highlithing for this Coq-Elip script may not work right after the codespace setup.
-  Just refresh the browser and syntax highlithing will start to work in the codespace web-vscode.
+  Just refresh the browser and syntax highlithing will start to work in the codespace vscode web.
 *)
 
 Elpi Program tutorial lp:{{
