@@ -1,5 +1,5 @@
 {
-  "name": "Coq Development Container",
+  "name": "Coq-Elpi Development Container",
   "build": {
     "dockerfile": "Dockerfile"
   },
