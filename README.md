@@ -14,3 +14,5 @@ To use Codespaces with this repository, follow these steps:
 
 
 After launching the codespace, you are ready to run examples in the [Tutorial on the Elpi programming language](https://lpcic.github.io/coq-elpi/tutorial_elpi_lang.html).
+
+See [coq-elpi](https://github.com/LPCIC/coq-elpi) repository for further details.
