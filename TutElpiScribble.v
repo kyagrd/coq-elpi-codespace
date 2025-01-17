@@ -104,7 +104,7 @@ Elpi Accumulate lp:{{
 
     pred of i:term, o:ty.
     of (app Hd Arg) B :- of Hd (arr A B), of Arg A.
-    of (fun F) (arr A B) :- pi x\ of x A ==> of (F x) B.
+    of (fun F) (arr A B) :- pi x\ of x A => of (F x) B.
 }}.
 
 Elpi Query lp:{{
