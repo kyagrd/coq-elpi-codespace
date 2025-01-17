@@ -4,12 +4,13 @@
     "dockerfile": "Dockerfile"
   },
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "extensions.autoUpdate": false
   },
   "extensions": [
     "ocamllabs.ocaml-platform",
     "coq.coq",
-    "maximedenes.vscoq",
+    "maximedenes.vscoq@2.2.1",
     "gares.elpi-lang",
     "gares.coq-elpi-lang"
   ],
