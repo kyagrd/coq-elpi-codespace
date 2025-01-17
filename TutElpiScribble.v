@@ -3,6 +3,9 @@ From elpi Require Import elpi.
   should start with above line
   before typing in examples from
   https://lpcic.github.io/coq-elpi/tutorial_elpi_lang.html
+
+  Syntax highlithing for Coq-Elip script (*.v extension files) may not work right after the codespace setup.
+  Just refresh the browser and syntax highlithing will start to work in the codespace web-vscode.
 *)
 
 Elpi Program tutorial lp:{{
