@@ -1,5 +1,5 @@
 # coq-elpi codespace
-Quick way to try $\lambda$Prolog via github codespace vscode web editor, without local installations.
+Quick way to try λProlog via github codespace vscode web editor, without local installations.
 
 ## Using Codespaces with this Repository
 
