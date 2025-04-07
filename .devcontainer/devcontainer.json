@@ -10,7 +10,7 @@
   "extensions": [
     "ocamllabs.ocaml-platform",
     "coq.coq",
-    "maximedenes.vscoq@2.2.1",
+    "maximedenes.vscoq@2.2.5",
     "gares.elpi-lang",
     "gares.coq-elpi-lang"
   ],
