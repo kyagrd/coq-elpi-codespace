@@ -25,25 +25,31 @@ Elpi Accumulate lp:{{
     pred onep   o:proc, o:(name -> act), o:(name -> proc).
     % Tau
     one (taup P) tau P.             
-    % Inp
-    one (out X Y P) (up X Y) P.     
     % Out
+    one (out X Y P) (up X Y) P.     
+    % Inp
     onep (in X M) (dn X) M.         
     % Mat
     one (match X X P) A P' :- one P A P'.
     onep (match X X P) A P' :- onep P A P'.
-    % Par-L
+    % Sum-L
     one (plus P _) A P' :- one P A P'.
     onep (plus P _) A P' :- onep P A P'.
-    % Par-R
+    % Sum-R
     one (plus _ Q) A Q' :- one Q A Q'.
     onep (plus _ Q) A Q' :- onep Q A Q'.
+    % Par-L
+    one (par P Q) A (par P' Q) :- one P A P'.
+    onep (par P Q) A (y\par (P' y) Q) :- onep P A P'.
+    % Par-R
+    one (par P Q) A (par P Q') :- one Q A Q'.
+    onep (par P Q) A (y\ par P (Q' y)) :- onep Q A Q'.
     % Comm-L
-    one (plus P Q) tau (plus P' Q') :- one P (up X V) P',
-                                    onep Q (dn X) (y\Q').
+    one (par P Q) tau (par P' (Q' V)) :- one P (up X V) P',
+                                        onep Q (dn X) Q'.
     % Comm-R
-    one (plus P Q) tau (plus P' Q') :- onep P (dn X) (y\P'),
-                                    one Q (up X V) Q'.
+    one (par P Q) tau (par (P' V) Q') :- onep P (dn X) P',
+                                        one Q (up X V) Q'.
 }}.
 
 Elpi Accumulate lp:{{
@@ -69,7 +75,23 @@ Elpi Accumulate lp:{{
 }}.
 
 Elpi Query lp:{{
-    % example 1
-    example 3 X, coq.say "example 1:" X. 
+    example 1 P, coq.say "example 1:" P. 
 }}.
+
+Elpi Query lp:{{
+    example 1 P, one P A P'. 
+}}.
+
+Elpi Query lp:{{
+    example 1 P, one P (up X Y) P'. 
+}}.
+
+Elpi Query lp:{{
+    example 1 P, one P tau P'. 
+}}.
+
+Elpi Query lp:{{
+    example 1 P, onep P A P'. 
+}}.
+
 
