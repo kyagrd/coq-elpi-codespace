@@ -50,6 +50,18 @@ Elpi Accumulate lp:{{
     % Comm-R
     one (par P Q) tau (par (P' V) Q') :- onep P (dn X) P',
                                         one Q (up X V) Q'.
+
+    % Res
+    one (nu P) A (nu P') :- pi y\ one (P y) A (P' y).
+    onep (nu P) A (x\ nu y\ P' y x) :- pi y\ onep (P y) A (P' y).
+    % Close-L
+    one (par P Q) tau (nu z\ par (P' z) (Q' z)) :- onep P (up X) P',
+                                                    onep Q (dn X) Q'.
+    % Close-R
+    one (par P Q) tau (nu z\ par (P' z) (Q' z)) :- onep P (dn X) P',
+                                                    onep Q (up X) Q'.
+    % Open
+    onep (nu P) (up X) P' :- pi y\ one (P y) (up X y) (P' y).
 }}.
 
 Elpi Accumulate lp:{{
@@ -72,6 +84,8 @@ Elpi Accumulate lp:{{
     example 7 (nu y\ out a y (par (in y w\ null) (out b b null))).
     %           new y.( a<y>.( y(w).b<b>.0 + b<b>.y(w).0 ) )
     example 8 (nu y\ out a y (plus (in y w\ out b b null) (out b b (in y w\ null)))).
+    %           ( a(y).0 | new x.(a<x>.0) )
+    example 13 (par (in a y\ null) (nu x\ out a x null)).
 }}.
 
 Elpi Query lp:{{
@@ -94,4 +108,18 @@ Elpi Query lp:{{
     example 1 P, onep P A P'. 
 }}.
 
+Elpi Query lp:{{
+    example 3 P, coq.say "example 3:" P. 
+}}.
 
+Elpi Query lp:{{
+    example 3 P, one P A P'. 
+}}.
+
+Elpi Query lp:{{
+    example 13 P, coq.say "example 3:" P. 
+}}.
+
+Elpi Query lp:{{
+    example 13 P, one P A P'. 
+}}.
