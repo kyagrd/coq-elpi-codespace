@@ -5,6 +5,7 @@ Elpi Program bisim lp:{{
 
     kind proc  type.
     type null  proc.                 % 0를 표현하는 null
+    type match name -> name -> proc -> proc. % [x=y]P를 표현하는 match x y P
     type par   proc -> proc -> proc. % P|Q를 표현하는 par P Q
     type plus  proc -> proc -> proc. % P+Q를 표현하는 plus P Q
     type in    name -> (name -> proc) -> proc. % x(y).P를 표현 in x (y\P)
@@ -17,6 +18,32 @@ Elpi Program bisim lp:{{
     type tau  act.
     type up   name -> name -> act. % x에  데이터 y를 output 액션을 나타내는 up x y
     type dn   name -> name -> act. % x에서 데이터 y를 input 액션을 나타내는 dn x y
+}}.
+
+Elpi Accumulate lp:{{
+    pred one    o:proc, o:act, o:proc.
+    pred onep   o:proc, o:(name -> act), o:(name -> proc).
+    % Tau
+    one (taup P) tau P.             
+    % Inp
+    one (out X Y P) (up X Y) P.     
+    % Out
+    onep (in X M) (dn X) M.         
+    % Mat
+    one (match X X P) A P' :- one P A P'.
+    onep (match X X P) A P' :- onep P A P'.
+    % Par-L
+    one (plus P _) A P' :- one P A P'.
+    onep (plus P _) A P' :- onep P A P'.
+    % Par-R
+    one (plus _ Q) A Q' :- one Q A Q'.
+    onep (plus _ Q) A Q' :- onep Q A Q'.
+    % Comm-L
+    one (plus P Q) tau (plus P' Q') :- one P (up X V) P',
+                                    onep Q (dn X) (y\Q').
+    % Comm-R
+    one (plus P Q) tau (plus P' Q') :- onep P (dn X) (y\P'),
+                                    one Q (up X V) Q'.
 }}.
 
 Elpi Accumulate lp:{{
